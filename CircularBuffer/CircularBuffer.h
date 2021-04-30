@@ -26,6 +26,9 @@
  * See the attached LICENSE file.
  */
 
+#ifndef CIRCBUF_H
+#define CIRCBUF_H
+
 /* WARNING: In order to guarantee efficiency in memory usage and speed, this
  * library reads and writes blocks of bytes as long as a "void *" (8 bytes on
  * x86_64). Thus, make sure you can handle eventual casts for "read" and "write"
@@ -57,3 +60,5 @@ void *cbRead(CircBuffer *cBuff);
 int cbWrite(CircBuffer *cBuff, void *data);
 ulong cbCopy(CircBuffer *cBuff, void **dataBuf, ulong bufSize, int upTo);
 ulong cbPaste(CircBuffer *cBuff, void **dataBuf, ulong bufSize, int upTo);
+
+#endif
